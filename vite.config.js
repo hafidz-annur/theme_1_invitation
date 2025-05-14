@@ -12,8 +12,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-      'asset' : fileURLToPath(new URL('./public', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  base: process.env.NODE_ENV === 'production' ? '/tema-1/' : '/'
 })
