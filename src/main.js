@@ -48,7 +48,7 @@ const vuetify = createVuetify({
 import "./assets/main.css";
 
 const app = createApp(App);
-
+app.config.globalProperties.$asset = '/public/';
 app.use(vuetify);
 app.use(router);
 app.use(Countdown);
