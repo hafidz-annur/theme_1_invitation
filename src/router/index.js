@@ -4,8 +4,8 @@ import Home from "../Home.vue";
 
 const routes = [
   {
-    path: "/:name?",
-    props: (route) => ({ name: route.params.name }),
+    path: "/:n?",
+    props: (route) => ({ name: route.query.n }),
     name: "Home",
     component: Home,
   },
