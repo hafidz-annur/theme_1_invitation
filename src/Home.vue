@@ -16,7 +16,7 @@ import quote from "@/biodata/quotes.js";
 import caption from "@/biodata/caption.js";
 
 const props = defineProps({ name: String });
-const menu = ref(null);
+const menu = ref();
 
 const checkMenu = (values) => {
   menu.value = values;
@@ -51,7 +51,7 @@ const captions = ref(caption);
             <Galeri v-if="menu == 'Galeri'" :data="data" />
             <Hadiah v-if="menu == 'Hadiah'" :data="data" />
             <RSVP v-if="menu == 'RSVP'" />
-            <Closing v-if="menu == 'Penutupan'" />
+            <Closing v-if="menu == 'Penutupan'" :caption="captions" />
           </div>
           <Menus v-if="menu" :data="data" @selected="checkMenu" />
         </v-col>
@@ -62,7 +62,7 @@ const captions = ref(caption);
 
 <style>
 .bg-theme {
-  background-image: url("/public/img/cover.webp");
+  background-image: url("/public/img/cover.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

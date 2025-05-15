@@ -6,12 +6,12 @@ const props = defineProps({ data: Object, caption: Object });
 const deadline = ref(props.data?.acara?.resepsi?.tanggal);
 </script>
 <template>
-  <v-container height="100vh" class="relative p-5">
-    <div class="bg-white/80 h-[87vh] rounded-lg">
+  <v-container height="100dvh" class="relative p-5">
+    <div class="bg-white/80 h-[87dvh] rounded-lg px-5">
       <div class="text-center pt-5">
         <p
           v-html="props.caption?.islam?.pembuka[1]"
-          class="text-[16px] mt-3"
+          class="text-[14px] mt-3"
         ></p>
         <!-- <h2 class="mb-3 font-bold">
         {{ moment(deadline).format("LL") }}

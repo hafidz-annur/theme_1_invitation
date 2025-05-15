@@ -2,8 +2,8 @@
 const props = defineProps({ data: Object });
 </script>
 <template>
-  <v-container height="100vh" class="relative p-5">
-    <div class="flex items-center justify-center h-[87vh] bg-white/80 rounded-lg">
+  <v-container height="100dvh" class="relative p-5">
+    <div class="flex items-center justify-center h-[87dvh] bg-white/80 rounded-lg">
       <div class="text-center">
         <h3 class="text-lg mb-5">{{ props.data?.lokasi?.tempat }}</h3>
         <div

@@ -16,8 +16,8 @@ const copyText = (text) => {
 };
 </script>
 <template>
-  <v-container height="100vh" class="relative p-5">
-    <div class="bg-white/80 h-[87vh] rounded-lg p-5">
+  <v-container height="100dvh" class="relative p-5">
+    <div class="bg-white/80 h-[87dvh] rounded-lg p-5">
       <div class="text-center mb-3">
         <h4 class="mb-1 font-bold">Terima Kasih</h4>
         <p>
@@ -35,15 +35,15 @@ const copyText = (text) => {
         <v-card-text>
           <v-tabs-window v-model="tab">
             <v-tabs-window-item value="one">
-              <div class="h-[54vh] overflow-auto">
+              <div class="h-[54dvh] overflow-auto">
                 <div
                   v-for="item in props.data?.hadiah?.bank"
                   :key="item"
-                  class="mb-3 bg-[#dedede] p-2 rounded-md"
+                  class="mb-3 bg-[#f3f3f3]/80 p-2 rounded-md shadow"
                 >
                   <div class="flex justify-center">
                     <img
-                      :src="'/public/img/bank/' + item.nama + '.png'"
+                      :src="'img/bank/' + item.nama + '.png'"
                       class="w-[130px]"
                     />
                   </div>
@@ -51,29 +51,30 @@ const copyText = (text) => {
                     {{ item.atas_nama }}
                   </p>
                   <div
-                    class="bg-white px-4 py-1 flex justify-between items-center rounded-md text-xl"
+                    class="bg-white/50 px-4 py-1 flex justify-between items-center rounded-md text-lg shadow"
                   >
                     {{ item.norek }}
-                    <v-icon
-                      icon="mdi-content-copy"
-                      class="cursor-pointer"
+                    <v-btn
+                      prepend-icon="mdi-content-copy"
                       @click="copyText(item.norek)"
-                    />
+                    >
+                      Copy
+                    </v-btn>
                   </div>
                 </div>
               </div>
             </v-tabs-window-item>
 
             <v-tabs-window-item value="two">
-              <div class="h-[54vh] overflow-auto">
+              <div class="h-[54dvh] overflow-auto">
                 <div
                   v-for="item in props.data?.hadiah?.ewallet"
                   :key="item"
-                  class="mb-3 bg-[#dedede] p-2 rounded-md"
+                  class="mb-3 bg-[#f3f3f3]/80 p-2 rounded-md shadow-md"
                 >
                   <div class="flex justify-center">
                     <img
-                      :src="'/public/img/bank/' + item.nama + '.png'"
+                      :src="'img/bank/' + item.nama + '.png'"
                       class="w-[130px]"
                     />
                   </div>
@@ -81,14 +82,15 @@ const copyText = (text) => {
                     {{ item.atas_nama }}
                   </p>
                   <div
-                    class="bg-white px-4 py-1 flex justify-between items-center rounded-md text-xl"
+                    class="bg-white/50 px-4 py-1 flex justify-between items-center rounded-md text-lg shadow"
                   >
                     {{ item.norek }}
-                    <v-icon
-                      icon="mdi-content-copy"
-                      class="cursor-pointer"
+                    <v-btn
+                      prepend-icon="mdi-content-copy"
                       @click="copyText(item.norek)"
-                    />
+                    >
+                      Copy
+                    </v-btn>
                   </div>
                 </div>
               </div>

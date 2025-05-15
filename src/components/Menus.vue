@@ -123,7 +123,7 @@ onMounted(() => {
       @click="playMusic()"
     />
   </div>
-  <div class="absolute bottom-2 left-0 w-full px-5">
+  <div class="absolute bottom-1 left-0 w-full px-5">
     <v-tabs
       v-model="selected"
       align-tabs="center"

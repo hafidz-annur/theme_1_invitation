@@ -7,15 +7,15 @@ const openInvitation = () => {
 };
 </script>
 <template>
-  <v-container height="100vh" class="relative">
-    <div class="text-center pt-5">
-      <h3 class="text-md mb-3">The Wedding of</h3>
-      <h1 class="text-4xl font-bold">
+  <v-container height="100dvh" class="relative p-0">
+    <div class="text-center h-full bg-[#ffead3]/70 p-5">
+      <h3 class="text-md mb-3 font-bold text-primary">The Wedding of</h3>
+      <h1 class="text-4xl font-bold text-gray-600">
         {{ props.data?.mempelai[0].nama_panggilan }}
       </h1>
 
-      <h2 class="text-xl font-bold">&</h2>
-      <h1 class="text-4xl font-bold">
+      <h2 class="text-xl font-bold mt-2 text-gray-600">&</h2>
+      <h1 class="text-4xl font-bold text-gray-600">
         {{ props.data?.mempelai[1].nama_panggilan }}
       </h1>
 
@@ -30,7 +30,7 @@ const openInvitation = () => {
           Kepada Yth; <br />
           Bapak/Ibu/Saudara/i
         </div>
-        <v-card variant="tonal" color="primary" border>
+        <v-card variant="tonal" color="dark" border>
           <v-card-text class="text-center">
             <h4 class="text-lg">
               {{ props.name ? props.name : "Belum Ada Nama" }}
