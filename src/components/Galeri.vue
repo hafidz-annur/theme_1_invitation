@@ -8,11 +8,7 @@ const props = defineProps({ data: Object });
       <v-row>
         <template v-for="(image, imgIdx) in props.data?.galeri" :key="imgIdx">
           <v-col :cols="image.cols">
-            <v-img
-              :src="image.foto"
-              height="100%"
-              cover
-            ></v-img>
+            <v-img :src="image.foto" height="100%" cover></v-img>
           </v-col>
 
           <v-col v-if="image.children" class="d-flex flex-column" cols="6">
@@ -22,11 +18,7 @@ const props = defineProps({ data: Object });
                 :key="childIdx"
                 :cols="children.cols"
               >
-                <v-img
-                  :src="children.foto"
-                  height="100%"
-                  cover
-                ></v-img>
+                <v-img :src="children.foto" height="100%" cover></v-img>
               </v-col>
             </v-row>
           </v-col>

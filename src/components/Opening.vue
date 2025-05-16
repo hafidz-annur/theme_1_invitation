@@ -8,36 +8,18 @@ const deadline = ref(props.data?.acara?.resepsi?.tanggal);
 <template>
   <v-container height="100dvh" class="relative p-5">
     <div class="bg-white/80 h-[87dvh] rounded-lg px-5">
-      <div class="text-center pt-5">
+      <div class="text-center pt-5 animate__animated animate__zoomIn animate__delay-1s">
         <p
           v-html="props.caption?.islam?.pembuka[1]"
           class="text-[14px] mt-3"
         ></p>
-        <!-- <h2 class="mb-3 font-bold">
-        {{ moment(deadline).format("LL") }}
-      </h2> -->
-        <!-- <vue3-flip-countdown
-        countdownSize="1rem"
-        labelSize=".6rem"
-        mainFlipBackgroundColor="#fff"
-        secondFlipBackgroundColor="#fff"
-        mainColor="#000"
-        secondFlipColor="#000"
-        :labels="{
-          days: 'Hari',
-          hours: 'Jam',
-          minutes: 'Menit',
-          seconds: 'Detik',
-        }"
-        :deadline="deadline"
-      /> -->
       </div>
 
-      <div class="flex justify-center">
+      <div class="flex justify-center animate__animated animate__zoomIn animate__delay-1s">
         <img src="/public/img/wayang.png" alt="" class="w-[110px]" />
       </div>
 
-      <div class="absolute bottom-20 left-0 w-full flex justify-center">
+      <div class="absolute bottom-20 left-0 w-full flex justify-center animate__animated animate__zoomIn animate__delay-1s">
         <div class="w-[60%]">
           <div class="text-center mb-3">
             <v-avatar
@@ -46,8 +28,8 @@ const deadline = ref(props.data?.acara?.resepsi?.tanggal);
               class="mb-3"
             />
             <h1 class="text-xl font-bold">
-              {{ props.data?.mempelai[0].nama_panggilan }} &
-              {{ props.data?.mempelai[1].nama_panggilan }}
+              {{ props.data?.mempelai.pria.nama_panggilan }} &
+              {{ props.data?.mempelai.wanita.nama_panggilan }}
             </h1>
           </div>
         </div>

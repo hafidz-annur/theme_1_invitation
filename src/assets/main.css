@@ -1,7 +1,7 @@
 @import './base.css';
 
 /* font heading  */
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
 /* font paragraph */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
@@ -10,11 +10,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
-body, p {
+body, p, small {
   font-family: "Outfit", sans-serif !important;
+  color: rgb(100, 99, 99);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Playwrite DE Grund", cursive !important;
+  font-family: "Satisfy", cursive;
+  color: rgb(109, 108, 108);
 }

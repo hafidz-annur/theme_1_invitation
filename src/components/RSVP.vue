@@ -4,7 +4,7 @@ import { database } from "@/firebase";
 import { ref as dbRef, get, child, set, push } from "firebase/database";
 import moment from "moment";
 
-const dialog = ref(true);
+const dialog = ref(false);
 const messages = ref([]);
 const formData = ref(null);
 const form = ref({
@@ -102,38 +102,76 @@ onMounted(() => {
     </v-card>
   </v-dialog>
   <v-container height="100dvh" class="relative p-5">
-    <div class="bg-white/80 h-[87dvh] rounded-lg p-5">
+    <div
+      class="bg-white/80 h-[87dvh] rounded-lg p-5 animate__animated animate__fadeInUp"
+    >
       <div class="h-full overflow-hidden">
-        <h3 class="text-[16px] font-bold text-center mb-3">RSVP</h3>
+        <h3
+          class="text-2xl font-bold text-center mb-3 animate__animated animate__zoomIn animate__delay-1s"
+        >
+          Kirim Ucapan
+        </h3>
+        <vue3-flip-countdown
+          countdownSize="1.4rem"
+          labelSize="1rem"
+          mainFlipBackgroundColor="#C3A568"
+          secondFlipBackgroundColor="#C3A568"
+          mainColor="#fff"
+          secondFlipColor="#fff"
+          :labels="{
+            days: 'Hari',
+            hours: 'Jam',
+            minutes: 'Menit',
+            seconds: 'Detik',
+          }"
+          :deadline="deadline"
+          class="animate__animated animate__zoomIn animate__delay-2s"
+        />
         <v-btn
           prepend-icon="mdi-send"
-          color="info"
           block
-          class="mb-3"
+          class="mb-3 mt-3 animate__animated animate__zoomIn animate__delay-3s"
           @click="dialog = true"
+          color="#C1A162"
+          size="small"
         >
           Kirim Pesan
         </v-btn>
-        <div class="h-full overflow-auto pb-[80px]">
+        <div
+          class="h-full overflow-auto pb-[150px] animate__animated animate__zoomIn animate__delay-4s"
+        >
           <div
-            class="bg-gray-500/50 rounded-lg px-2 py-2 mb-3 text-white"
+            class="bg-white rounded-lg px-2 py-2 mb-2 shadow"
             v-for="(item, index) in messages.pesan"
             :key="item"
           >
             <div class="flex items-center justify-between">
               <div>
-                <h5 class="-mb-2">
+                <p class="mb-0 flex items-center">
                   {{ item.nama }}
-                </h5>
-                <small class="text-gray-200">{{ item.created_at }}</small>
-              </div>
-              <div class="bg-info rounded-lg px-2">
-                <small>
-                  {{ item.kehadiran }}
-                </small>
+                  <v-icon
+                    icon="mdi-check-circle"
+                    color="#02750f"
+                    class="ms-2"
+                    v-if="item.kehadiran == 'Hadir'"
+                  />
+                  <v-icon
+                    icon="mdi-close-circle"
+                    color="error"
+                    class="ms-2"
+                    v-else-if="item.kehadiran == 'Belum Bisa Hadir'"
+                  />
+                  <v-icon
+                    icon="mdi-minus-circle"
+                    color="#000"
+                    class="ms-2"
+                    v-else
+                  />
+                </p>
+                <small class="text-gray-400">{{ item.created_at }}</small>
               </div>
             </div>
-            <p class="border-t-2">
+            <p class="border-t-2 pt-2 mt-2">
               {{ item.pesan }}
             </p>
           </div>

@@ -8,7 +8,7 @@ const copyText = (text) => {
   navigator.clipboard
     .writeText(text)
     .then(() => {
-      alert("Text copied to clipboard:", text);
+      alert("Berhasil disalin", text);
     })
     .catch((err) => {
       console.error("Failed to copy text:", err);
@@ -17,80 +17,104 @@ const copyText = (text) => {
 </script>
 <template>
   <v-container height="100dvh" class="relative p-5">
-    <div class="bg-white/80 h-[87dvh] rounded-lg p-5">
-      <div class="text-center mb-3">
-        <h4 class="mb-1 font-bold">Terima Kasih</h4>
+    <div class="bg-white/90 h-[87dvh] rounded-lg p-5">
+      <div
+        class="text-center mb-3 animate__animated animate__zoomIn animate__delay-1s"
+      >
+        <h4 class="mb-1 text-2xl font-bold">Terima Kasih</h4>
         <p>
           Terima kasih telah menambah semangat kegembiraan pernikahaan kam
           dengan kehadiran dan hadiah indah Anda.
         </p>
       </div>
-      <v-card variant="tonal">
-        <v-tabs v-model="tab" bg-color="secondary" align-tabs="center">
-          <v-tab value="one">Bank</v-tab>
-          <v-tab value="two">E-Wallet</v-tab>
-          <v-tab value="three">Kirim Kado</v-tab>
+      <v-card
+        color="white"
+        class="animate__animated animate__zoomIn animate__delay-2s"
+      >
+        <v-tabs v-model="tab" bg-color="#C1A162" align-tabs="center">
+          <v-tab
+            value="one"
+            class="text-[12px]"
+            :class="tab == 'one' ? 'bg-white text-gray-500' : null"
+            >Bank</v-tab
+          >
+          <v-tab
+            value="two"
+            class="text-[12px]"
+            :class="tab == 'two' ? 'bg-white text-gray-500' : null"
+            >E-Wallet</v-tab
+          >
+          <v-tab
+            value="three"
+            class="text-[12px]"
+            :class="tab == 'three' ? 'bg-white text-gray-500' : null"
+            >Kirim Kado</v-tab
+          >
         </v-tabs>
 
         <v-card-text>
           <v-tabs-window v-model="tab">
             <v-tabs-window-item value="one">
-              <div class="h-[54dvh] overflow-auto">
+              <div class="h-[60dvh] overflow-auto">
                 <div
                   v-for="item in props.data?.hadiah?.bank"
                   :key="item"
-                  class="mb-3 bg-[#f3f3f3]/80 p-2 rounded-md shadow"
+                  class="mb-3 bg-[#fff] p-2 py-4 rounded-lg shadow-lg"
                 >
-                  <div class="flex justify-center">
-                    <img
-                      :src="'img/bank/' + item.nama + '.png'"
-                      class="w-[130px]"
-                    />
-                  </div>
-                  <p class="text-[16px] text-center my-1">
-                    {{ item.atas_nama }}
-                  </p>
-                  <div
-                    class="bg-white/50 px-4 py-1 flex justify-between items-center rounded-md text-lg shadow"
-                  >
-                    {{ item.norek }}
-                    <v-btn
-                      prepend-icon="mdi-content-copy"
-                      @click="copyText(item.norek)"
-                    >
-                      Copy
-                    </v-btn>
+                  <div class="flex justify-between items-center">
+                    <div class="">
+                      <p class="text-lg text-center my-1">
+                        {{ item.atas_nama }}
+                      </p>
+                      <div class="flex items-center text-gray-400 text-lg mt-1">
+                        <v-icon icon="mdi-wallet-bifold-outline" class="me-2"></v-icon>
+                        {{ item.norek }}
+                      </div>
+                    </div>
+                    <div class="w-[100px] text-right">
+                      <img :src="'img/bank/' + item.nama + '.png'" class="mb-2" />
+                      <v-btn
+                        color="#C1A162"
+                        prepend-icon="mdi-content-copy"
+                        @click="copyText(item.norek)"
+                        size="small"
+                      >
+                        Salin
+                      </v-btn>
+                    </div>
                   </div>
                 </div>
               </div>
             </v-tabs-window-item>
 
             <v-tabs-window-item value="two">
-              <div class="h-[54dvh] overflow-auto">
+              <div class="h-[60dvh] overflow-auto">
                 <div
                   v-for="item in props.data?.hadiah?.ewallet"
                   :key="item"
-                  class="mb-3 bg-[#f3f3f3]/80 p-2 rounded-md shadow-md"
+                  class="mb-3 bg-[#fff] p-2 py-4 rounded-lg shadow-lg"
                 >
-                  <div class="flex justify-center">
-                    <img
-                      :src="'img/bank/' + item.nama + '.png'"
-                      class="w-[130px]"
-                    />
-                  </div>
-                  <p class="text-[16px] text-center my-1">
-                    {{ item.atas_nama }}
-                  </p>
-                  <div
-                    class="bg-white/50 px-4 py-1 flex justify-between items-center rounded-md text-lg shadow"
-                  >
-                    {{ item.norek }}
-                    <v-btn
-                      prepend-icon="mdi-content-copy"
-                      @click="copyText(item.norek)"
-                    >
-                      Copy
-                    </v-btn>
+                  <div class="flex justify-between items-center">
+                    <div class="">
+                      <p class="text-lg text-center my-1">
+                        {{ item.atas_nama }}
+                      </p>
+                      <div class="flex items-center text-gray-400 text-lg mt-1">
+                        <v-icon icon="mdi-wallet-bifold-outline" class="me-2"></v-icon>
+                        {{ item.norek }}
+                      </div>
+                    </div>
+                    <div class="w-[100px] text-right">
+                      <img :src="'img/bank/' + item.nama + '.png'" class="mb-2" />
+                      <v-btn
+                        color="#C1A162"
+                        prepend-icon="mdi-content-copy"
+                        @click="copyText(item.norek)"
+                        size="small"
+                      >
+                        Salin
+                      </v-btn>
+                    </div>
                   </div>
                 </div>
               </div>

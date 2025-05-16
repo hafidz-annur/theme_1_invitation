@@ -2,8 +2,8 @@ const data = {
   musik: "musik/nikah.mp3",
   foto_cover: "",
   foto_opening: "img/opening.webp",
-  mempelai: [
-    {
+  mempelai: {
+    pria: {
       nama_panggilan: "Vidi",
       nama_lengkap: "Oxavia Aldiano",
       anak_ke: "Pertama",
@@ -13,8 +13,9 @@ const data = {
       },
       alamat: "Jakarta Selatan",
       foto: "img/pria.webp",
+      insta: "https://www.instagram.com/",
     },
-    {
+    wanita: {
       nama_panggilan: "Sheila",
       nama_lengkap: "Sheila Dara Aisha",
       anak_ke: "Kedua",
@@ -24,18 +25,19 @@ const data = {
       },
       alamat: "Jakarta Selatan",
       foto: "img/wanita.webp",
+      insta: "https://www.instagram.com/",
     },
-  ],
+  },
   acara: {
     akad_nikah: {
       hari: "Minggu",
-      tanggal: "2025-12-10",
+      tanggal: "10 Desember 2025",
       waktu: "07:00 WIB - Selesai",
       tempat: "Gedung Serba Guna Mutiara",
     },
     resepsi: {
       hari: "Minggu",
-      tanggal: "2025-12-10",
+      tanggal: "10 Desember 2025",
       waktu: "09:00 WIB - Selesai",
       tempat: "Gedung Serba Guna Mutiara",
     },
