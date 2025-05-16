@@ -14,11 +14,11 @@ const saveCalendar = () => {
   const location = "&location=" + props.data?.acara?.resepsi?.tempat;
   const dates =
     "&dates=" +
-    moment(props.data?.acara?.akad_nikah?.tanggal)
+    moment("2025-12-10")
       .utc()
       .format("YYYYMMDDTHHmmss[Z]") +
     "%2F" +
-    moment(props.data?.acara?.akad_nikah?.tanggal)
+    moment("2025-12-10")
       .utc()
       .format("YYYYMMDDTHHmmss[Z]");
 
