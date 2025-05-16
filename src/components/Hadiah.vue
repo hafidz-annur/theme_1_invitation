@@ -55,7 +55,7 @@ const copyText = (text) => {
         <v-card-text>
           <v-tabs-window v-model="tab">
             <v-tabs-window-item value="one">
-              <div class="h-[60dvh] overflow-auto">
+              <div class="h-[55dvh] overflow-auto">
                 <div
                   v-for="item in props.data?.hadiah?.bank"
                   :key="item"
@@ -63,16 +63,22 @@ const copyText = (text) => {
                 >
                   <div class="flex justify-between items-center">
                     <div class="">
-                      <p class="text-lg text-center my-1">
+                      <p class="text-center my-1">
                         {{ item.atas_nama }}
                       </p>
-                      <div class="flex items-center text-gray-400 text-lg mt-1">
-                        <v-icon icon="mdi-wallet-bifold-outline" class="me-2"></v-icon>
+                      <div class="flex items-center text-gray-400 mt-1">
+                        <v-icon
+                          icon="mdi-wallet-bifold-outline"
+                          class="me-2"
+                        ></v-icon>
                         {{ item.norek }}
                       </div>
                     </div>
-                    <div class="w-[100px] text-right">
-                      <img :src="'img/bank/' + item.nama + '.png'" class="mb-2" />
+                    <div class="w-[80px] text-right">
+                      <img
+                        :src="'img/bank/' + item.nama + '.png'"
+                        class="mb-2"
+                      />
                       <v-btn
                         color="#C1A162"
                         prepend-icon="mdi-content-copy"
@@ -88,7 +94,7 @@ const copyText = (text) => {
             </v-tabs-window-item>
 
             <v-tabs-window-item value="two">
-              <div class="h-[60dvh] overflow-auto">
+              <div class="h-[55dvh] overflow-auto">
                 <div
                   v-for="item in props.data?.hadiah?.ewallet"
                   :key="item"
@@ -96,16 +102,22 @@ const copyText = (text) => {
                 >
                   <div class="flex justify-between items-center">
                     <div class="">
-                      <p class="text-lg text-center my-1">
+                      <p class="text-center my-1">
                         {{ item.atas_nama }}
                       </p>
-                      <div class="flex items-center text-gray-400 text-lg mt-1">
-                        <v-icon icon="mdi-wallet-bifold-outline" class="me-2"></v-icon>
+                      <div class="flex items-center text-gray-400 mt-1">
+                        <v-icon
+                          icon="mdi-wallet-bifold-outline"
+                          class="me-2"
+                        ></v-icon>
                         {{ item.norek }}
                       </div>
                     </div>
-                    <div class="w-[100px] text-right">
-                      <img :src="'img/bank/' + item.nama + '.png'" class="mb-2" />
+                    <div class="w-[80px] text-right">
+                      <img
+                        :src="'img/bank/' + item.nama + '.png'"
+                        class="mb-2"
+                      />
                       <v-btn
                         color="#C1A162"
                         prepend-icon="mdi-content-copy"
@@ -124,7 +136,7 @@ const copyText = (text) => {
               <div class="text-center">
                 <v-icon icon="mdi-gift-outline" size="40" class="mb-2" />
                 <h3 class="font-bold">Alamat</h3>
-                <p class="mt-3 text-[16px]">
+                <p class="mt-3">
                   {{ props.data?.hadiah?.alamat }}
                 </p>
               </div>
