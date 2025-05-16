@@ -45,7 +45,7 @@ const saveCalendar = () => {
           <h3 class="text-2xl font-bold mb-2">Akad Pernikahan</h3>
           <p class="mb-0">{{ props.data?.acara?.akad_nikah?.hari }}</p>
           <p>
-            {{ moment(props.data?.acara?.akad_nikah?.tanggal).format("LL") }}
+            {{ props.data?.acara?.akad_nikah?.tanggal }}
           </p>
           <p>Pukul {{ props.data?.acara?.akad_nikah?.waktu }}</p>
           <p>{{ props.data?.acara?.akad_nikah?.tempat }}</p>
@@ -59,7 +59,7 @@ const saveCalendar = () => {
           <h3 class="text-2xl font-bold mb-2 -mt-[20px]">Resepsi</h3>
           <p class="mb-0">{{ props.data?.acara?.resepsi?.hari }}</p>
           <p>
-            {{ moment(props.data?.acara?.resepsi?.tanggal).format("LL") }}
+            {{ props.data?.acara?.resepsi?.tanggal }}
           </p>
           <p>Pukul {{ props.data?.acara?.resepsi?.waktu }}</p>
           <p>{{ props.data?.acara?.resepsi?.tempat }}</p>

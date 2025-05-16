@@ -4,6 +4,7 @@ import { database } from "@/firebase";
 import { ref as dbRef, get, child, set, push } from "firebase/database";
 import moment from "moment";
 
+const deadline = ref("2025-12-10 10:00:00");
 const dialog = ref(false);
 const messages = ref([]);
 const formData = ref(null);
