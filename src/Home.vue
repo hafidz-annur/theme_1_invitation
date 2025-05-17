@@ -44,7 +44,7 @@ const updateOrCreateMetaTag = (attrName, attrValue, content) => {
 onBeforeMount(async () => {
   // Simulasi progress naik perlahan (0% ke 100%)
   while (progress.value < 100) {
-    await new Promise((resolve) => setTimeout(resolve, 50)); // tiap 50ms
+    await new Promise((resolve) => setTimeout(resolve, 100)); // tiap 50ms
     progress.value += 10;
   }
 
