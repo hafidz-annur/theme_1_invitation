@@ -55,7 +55,7 @@ const copyText = (text) => {
         <v-card-text>
           <v-tabs-window v-model="tab">
             <v-tabs-window-item value="one">
-              <div class="h-[55dvh] overflow-auto">
+              <div class="h-[50vh] overflow-auto">
                 <div
                   v-for="item in props.data?.hadiah?.bank"
                   :key="item"
@@ -94,7 +94,7 @@ const copyText = (text) => {
             </v-tabs-window-item>
 
             <v-tabs-window-item value="two">
-              <div class="h-[55dvh] overflow-auto">
+              <div class="h-[50vh] overflow-auto">
                 <div
                   v-for="item in props.data?.hadiah?.ewallet"
                   :key="item"
