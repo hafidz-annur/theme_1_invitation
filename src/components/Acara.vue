@@ -71,7 +71,7 @@ const saveCalendar = () => {
             @click="saveCalendar"
             class="mt-3"
           >
-            Save Calendar
+            Simpan Tanggal
           </v-btn>
         </div>
       </div>
