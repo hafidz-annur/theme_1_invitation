@@ -31,7 +31,7 @@ const openInvitation = () => {
 
       <div class="flex justify-center mt-5">
         <img
-          src="/public/img/wayang.png"
+          src="/public/img/wayang-white.png"
           alt=""
           class="md:w-[150px] w-[100px] animate__animated animate__zoomIn animate__delay-2s"
         />
