@@ -7,11 +7,11 @@ const props = defineProps({ data: Object });
     <div class="relative h-[87dvh] bg-black/40 rounded-lg overflow-auto p-5">
       <v-row>
         <template v-for="(image, imgIdx) in props.data?.galeri" :key="imgIdx">
-          <v-col :cols="image.cols">
+          <v-col class="pa-1" :cols="image.cols">
             <v-img :src="image.foto" height="100%" cover></v-img>
           </v-col>
 
-          <v-col v-if="image.children" class="d-flex flex-column" cols="6">
+          <v-col v-if="image.children" class="d-flex flex-column pa-1" cols="6">
             <v-row>
               <v-col
                 v-for="(children, childIdx) in image.children"

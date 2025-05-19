@@ -59,7 +59,7 @@ const copyText = (text) => {
                 <div
                   v-for="item in props.data?.hadiah?.bank"
                   :key="item"
-                  class="mb-3 bg-black/80 p-2 py-4 rounded-lg shadow-lg"
+                  class="mb-3 bg-gray-200/20 p-2 py-4 rounded-lg shadow-lg"
                 >
                   <div class="flex justify-between items-center">
                     <div class="">
@@ -98,7 +98,7 @@ const copyText = (text) => {
                 <div
                   v-for="item in props.data?.hadiah?.ewallet"
                   :key="item"
-                  class="mb-3 bg-[#fff] p-2 py-4 rounded-lg shadow-lg"
+                  class="mb-3 bg-gray-200/20 p-2 py-4 rounded-lg shadow-lg"
                 >
                   <div class="flex justify-between items-center">
                     <div class="">
