@@ -9,7 +9,7 @@ const openInvitation = () => {
 <template>
   <v-container height="100dvh" class="relative p-0">
     <div class="text-center h-full bg-[#ffead3]/70 p-5">
-      <p class="text-xl mb-3 text-dark animate__animated animate__zoomIn">
+      <p class="text-xl mb-3 text-dark animate__animated animate__zoomIn pt-[5vh]">
         The Wedding of
       </p>
       <h1

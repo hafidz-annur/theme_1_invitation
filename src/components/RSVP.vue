@@ -4,10 +4,14 @@ import { database } from "@/firebase";
 import { ref as dbRef, get, child, set, push } from "firebase/database";
 import moment from "moment";
 
-const deadline = ref("2025-12-10 10:00:00");
 const dialog = ref(false);
 const messages = ref([]);
 const formData = ref(null);
+const kehadiran = ref({
+  hadir: [],
+  tidak_hadir: [],
+  belum_tahu: [],
+});
 const form = ref({
   nama: null,
   pesan: null,
@@ -22,6 +26,7 @@ const fetchData = async () => {
 
     if (snapshot.exists()) {
       messages.value = snapshot.val();
+      checkKehadiran();
     } else {
       console.log("No data available");
     }
@@ -49,6 +54,22 @@ const submit = async () => {
       console.error("Gagal mengirim:", error);
     }
   }
+};
+
+const checkKehadiran = () => {
+  const values = Object.values(messages.value.pesan);
+
+  kehadiran.value.hadir = values.filter(
+    (item) => item.kehadiran === "Hadir"
+  ).length;
+
+  kehadiran.value.tidak_hadir = values.filter(
+    (item) => item.kehadiran === "Belum Bisa Hadir"
+  ).length;
+
+  kehadiran.value.belum_tahu = values.filter(
+    (item) => item.kehadiran === "Belum Tahu"
+  ).length;
 };
 
 onMounted(() => {
@@ -112,34 +133,50 @@ onMounted(() => {
         >
           Kirim Ucapan
         </h3>
-        <vue3-flip-countdown
-          countdownSize="1.4rem"
-          labelSize="1rem"
-          mainFlipBackgroundColor="#C3A568"
-          secondFlipBackgroundColor="#C3A568"
-          mainColor="#fff"
-          secondFlipColor="#fff"
-          :labels="{
-            days: 'Hari',
-            hours: 'Jam',
-            minutes: 'Menit',
-            seconds: 'Detik',
-          }"
-          :deadline="deadline"
-          class="animate__animated animate__zoomIn animate__delay-2s"
-        />
         <v-btn
           prepend-icon="mdi-send"
           block
-          class="mb-3 mt-3 animate__animated animate__zoomIn animate__delay-3s"
+          class="mb-3 mt-3 animate__animated animate__zoomIn animate__delay-2s"
           @click="dialog = true"
           color="#C1A162"
           size="small"
         >
           Kirim Pesan
         </v-btn>
+
+        <!-- Kehadiran  -->
         <div
-          class="h-full overflow-auto pb-[150px] animate__animated animate__zoomIn animate__delay-4s"
+          class="flex justify-between gap-2 animate__animated animate__zoomIn animate__delay-3s mb-2"
+        >
+          <div
+            class="w-1/3 bg-green-600/70 p-2 text-white text-center shadow-lg rounded-lg"
+          >
+            <div>
+              {{ kehadiran.hadir }}
+            </div>
+            <small class="text-white">Hadir</small>
+          </div>
+          <div
+            class="w-1/3 bg-red-600/70 p-2 text-white text-center shadow-lg rounded-lg"
+          >
+            <div>
+              {{ kehadiran.tidak_hadir }}
+            </div>
+            <small class="text-white">Belum Bisa</small>
+          </div>
+          <div
+            class="w-1/3 bg-yellow-600/70 p-2 text-white text-center shadow-lg rounded-lg"
+          >
+            <div>
+              {{ kehadiran.belum_tahu }}
+            </div>
+            <small class="text-white">Belum Tahu</small>
+          </div>
+        </div>
+        <!-- Kehadiran  -->
+
+        <div
+          class="h-full overflow-auto pb-[145px] animate__animated animate__zoomIn animate__delay-4s"
         >
           <div
             class="bg-white rounded-lg px-2 py-2 mb-2 shadow"

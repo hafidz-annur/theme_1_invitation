@@ -1,7 +1,10 @@
 <script setup>
+import { ref } from "vue";
 import moment from "moment";
 
 const props = defineProps({ data: Object });
+
+const deadline = ref("2025-12-10 10:00:00");
 
 const saveCalendar = () => {
   const title =
@@ -14,13 +17,9 @@ const saveCalendar = () => {
   const location = "&location=" + props.data?.acara?.resepsi?.tempat;
   const dates =
     "&dates=" +
-    moment("2025-12-10")
-      .utc()
-      .format("YYYYMMDDTHHmmss[Z]") +
+    moment("2025-12-10").utc().format("YYYYMMDDTHHmmss[Z]") +
     "%2F" +
-    moment("2025-12-10")
-      .utc()
-      .format("YYYYMMDDTHHmmss[Z]");
+    moment("2025-12-10").utc().format("YYYYMMDDTHHmmss[Z]");
 
   const url =
     "https://www.google.com/calendar/render?action=TEMPLATE" +
@@ -51,6 +50,22 @@ const saveCalendar = () => {
           <p>{{ props.data?.acara?.akad_nikah?.tempat }}</p>
         </div>
 
+        <vue3-flip-countdown
+          countdownSize=".8rem"
+          labelSize=".7rem"
+          mainColor="#C3A568"
+          labelColor="#C3A568"
+          :flipAnimation="false"
+          :labels="{
+            days: 'Hari',
+            hours: 'Jam',
+            minutes: 'Menit',
+            seconds: 'Detik',
+          }"
+          :deadline="props.data?.acara?.resepsi?.raw_tanggal"
+          class="animate__animated animate__zoomIn animate__delay-2s mt-3"
+        />
+
         <div class="animate__animated animate__zoomIn animate__delay-2s">
           <v-spacer class="my-5" />
           <div class="flex justify-center">
@@ -78,3 +93,9 @@ const saveCalendar = () => {
     </div>
   </v-container>
 </template>
+
+<style>
+.flip-clock__piece {
+  margin: 0 10px !important;
+}
+</style>
