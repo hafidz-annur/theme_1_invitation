@@ -21,17 +21,18 @@ export default createVuetify({
 const myCustomLightTheme = {
   dark: false,
   colors: {
-    primary: "#C3C5C5", // Biru lembut sebagai warna utama
-    "primary-darken-1": "#42A5F5", // Biru terang untuk hover/aksen
+    primary: "#4CAF50", // Hijau elegan utama (classic green)
+    "primary-darken-1": "#388E3C", // Hijau lebih gelap untuk hover/fokus
+    "primary-lighten-1": "#81C784", // Hijau lembut untuk elemen sekunder
 
-    secondary: "#1E1E1E", // Hitam lembut / abu gelap (background utama)
-    "secondary-darken-1": "#121212", // Background paling gelap
+    secondary: "#F3F3F3", // Abu terang sebagai background netral elegan
+    "secondary-darken-1": "#DADADA", // Sedikit lebih gelap untuk border/shadow
 
-    surface: "#2C2C2C", // Untuk permukaan elemen seperti kartu/modal
-    error: "#EF5350", // Merah terang untuk peringatan
-    info: "#29B6F6", // Biru terang untuk info
-    success: "#66BB6A", // Hijau muda untuk sukses/konfirmasi
-    warning: "#FFCA28", // Kuning lembut untuk peringatan
+    surface: "#FFFFFF", // Putih bersih untuk elemen permukaan
+    error: "#C62828", // Merah kuat untuk notifikasi kesalahan
+    info: "#2E7D32", // Hijau gelap (bisa juga dipakai sebagai info)
+    success: "#66BB6A", // Hijau terang untuk notifikasi sukses
+    warning: "#F9A825", // Kuning keemasan elegan untuk peringatan
   },
 };
 
