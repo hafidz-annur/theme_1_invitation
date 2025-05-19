@@ -7,7 +7,7 @@ const deadline = ref(props.data?.acara?.resepsi?.tanggal);
 </script>
 <template>
   <v-container height="100dvh" class="relative p-5">
-    <div class="bg-black/40 h-[87dvh] rounded-lg px-5">
+    <div class="bg-[#608961]/60 h-[87dvh] rounded-lg px-5">
       <div class="text-center pt-5 animate__animated animate__zoomIn animate__delay-1s">
         <p
           v-html="props.caption?.islam?.pembuka[1]"

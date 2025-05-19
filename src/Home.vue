@@ -54,7 +54,7 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-  <v-app class="bg-gradient-to-r from-gray-900 to-gray-700">
+  <v-app class="bg-gradient-to-r from-[#345435] to-[#214022]">
     <div
       class="flex flex-col justify-center items-center w-full h-[100dvh]"
       v-if="loading"

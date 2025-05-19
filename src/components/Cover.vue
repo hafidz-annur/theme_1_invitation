@@ -49,7 +49,7 @@ const openInvitation = () => {
           Bapak/Ibu/Saudara/i
         </p>
         <v-card
-          class="animate__animated animate__zoomIn animate__delay-2s bg-black/40"
+          class="animate__animated animate__zoomIn animate__delay-2s bg-[#608961]/60"
           shadow
         >
           <v-card-text class="text-center">

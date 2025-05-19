@@ -34,7 +34,7 @@ const saveCalendar = () => {
 <template>
   <v-container height="100dvh" class="relative p-5">
     <div
-      class="flex items-center justify-center h-[87dvh] bg-black/40 rounded-lg"
+      class="flex items-center justify-center h-[87dvh] bg-[#608961]/60 rounded-lg"
     >
       <div class="text-center">
         <div class="animate__animated animate__zoomIn animate__delay-1s">
@@ -53,8 +53,8 @@ const saveCalendar = () => {
         <vue3-flip-countdown
           countdownSize=".8rem"
           labelSize=".7rem"
-          mainColor="white"
-          labelColor="white"
+          mainColor="#9fb69f"
+          labelColor="#9fb69f"
           :flipAnimation="false"
           :labels="{
             days: 'Hari',

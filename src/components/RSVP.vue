@@ -125,7 +125,7 @@ onMounted(() => {
   </v-dialog>
   <v-container height="100dvh" class="relative p-5">
     <div
-      class="bg-black/40 h-[87dvh] rounded-lg p-5 animate__animated animate__fadeInUp"
+      class="bg-[#608961]/60 h-[87dvh] rounded-lg p-5 animate__animated animate__fadeInUp"
     >
       <div class="h-full overflow-hidden">
         <h3
@@ -179,7 +179,7 @@ onMounted(() => {
           class="h-full overflow-auto pb-[145px] animate__animated animate__zoomIn animate__delay-4s"
         >
           <div
-            class="bg-black/40 rounded-lg px-2 py-2 mb-2 shadow"
+            class="bg-[#608961]/60 rounded-lg px-2 py-2 mb-2 shadow"
             v-for="(item, index) in messages.pesan"
             :key="item"
           >
