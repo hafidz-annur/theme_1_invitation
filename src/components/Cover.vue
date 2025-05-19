@@ -8,30 +8,30 @@ const openInvitation = () => {
 </script>
 <template>
   <v-container height="100dvh" class="relative p-0">
-    <div class="text-center h-full bg-[#ffead3]/70 p-5">
+    <div class="text-center h-full bg-[#35312c]/80 p-5">
       <p class="text-xl mb-3 text-dark animate__animated animate__zoomIn pt-[5vh]">
         The Wedding of
       </p>
       <h1
-        class="text-4xl text-gray-600 animate__animated animate__zoomIn animate__delay-1s"
+        class="text-4xl text-white-600 animate__animated animate__zoomIn animate__delay-1s"
       >
         {{ props.data?.mempelai.pria.nama_panggilan }}
       </h1>
 
       <h2
-        class="text-3xl mt-2 text-gray-600 animate__animated animate__zoomIn animate__delay-1s"
+        class="text-3xl mt-2 text-white-600 animate__animated animate__zoomIn animate__delay-1s"
       >
         &
       </h2>
       <h1
-        class="text-4xl text-gray-600 animate__animated animate__zoomIn animate__delay-1s"
+        class="text-4xl text-white-600 animate__animated animate__zoomIn animate__delay-1s"
       >
         {{ props.data?.mempelai.wanita.nama_panggilan }}
       </h1>
 
       <div class="flex justify-center mt-5">
         <img
-          src="/public/img/wayang-white.png"
+          src="/public/img/wayang.png"
           alt=""
           class="md:w-[150px] w-[100px] animate__animated animate__zoomIn animate__delay-2s"
         />
@@ -47,9 +47,7 @@ const openInvitation = () => {
           Bapak/Ibu/Saudara/i
         </p>
         <v-card
-          variant="tonal"
-          color="dark"
-          class="animate__animated animate__zoomIn animate__delay-2s"
+          class="animate__animated animate__zoomIn animate__delay-2s bg-black/40"
           shadow
         >
           <v-card-text class="text-center">
@@ -69,7 +67,7 @@ const openInvitation = () => {
           <v-btn
             rounded
             @click="openInvitation"
-            color="#C1A162"
+            color="primary"
             size="small"
             prepend-icon="mdi-email-open-heart-outline"
           >

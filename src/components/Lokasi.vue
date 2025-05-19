@@ -4,7 +4,7 @@ const props = defineProps({ data: Object });
 <template>
   <v-container height="100dvh" class="relative p-5">
     <div
-      class="flex items-center justify-center h-[87dvh] bg-white/80 rounded-lg"
+      class="flex items-center justify-center h-[87dvh] bg-black/80 rounded-lg"
     >
       <div
         class="text-center animate__animated animate__zoomIn animate__delay-1s"
@@ -20,7 +20,7 @@ const props = defineProps({ data: Object });
           class="mt-5"
           append-icon="mdi-bicycle"
           prepend-icon="mdi-bicycle"
-          color="#C1A162"
+          color="primary"
           size="small"
         >
           Kunjungi Sekarang

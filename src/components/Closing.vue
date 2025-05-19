@@ -4,7 +4,7 @@ const props = defineProps({ caption: Object });
 <template>
   <v-container height="100dvh" class="relative p-5">
     <div
-      class="flex items-center justify-center bg-white/80 h-[87dvh] rounded-lg p-5 relative overflow-hidden"
+      class="flex items-center justify-center bg-black/80 h-[87dvh] rounded-lg p-5 relative overflow-hidden"
     >
       <div
         class="text-center animate__animated animate__zoomIn animate__delay-1s mb-10"

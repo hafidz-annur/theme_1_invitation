@@ -34,7 +34,7 @@ const saveCalendar = () => {
 <template>
   <v-container height="100dvh" class="relative p-5">
     <div
-      class="flex items-center justify-center h-[87dvh] bg-white/80 rounded-lg"
+      class="flex items-center justify-center h-[87dvh] bg-black/80 rounded-lg"
     >
       <div class="text-center">
         <div class="animate__animated animate__zoomIn animate__delay-1s">
@@ -53,8 +53,8 @@ const saveCalendar = () => {
         <vue3-flip-countdown
           countdownSize=".8rem"
           labelSize=".7rem"
-          mainColor="#C3A568"
-          labelColor="#C3A568"
+          mainColor="white"
+          labelColor="white"
           :flipAnimation="false"
           :labels="{
             days: 'Hari',
@@ -80,7 +80,7 @@ const saveCalendar = () => {
           <p>{{ props.data?.acara?.resepsi?.tempat }}</p>
 
           <v-btn
-            color="#C1A162"
+            color="primary"
             size="small"
             prepend-icon="mdi-calendar"
             @click="saveCalendar"

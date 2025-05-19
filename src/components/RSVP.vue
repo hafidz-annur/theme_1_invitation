@@ -125,7 +125,7 @@ onMounted(() => {
   </v-dialog>
   <v-container height="100dvh" class="relative p-5">
     <div
-      class="bg-white/80 h-[87dvh] rounded-lg p-5 animate__animated animate__fadeInUp"
+      class="bg-black/80 h-[87dvh] rounded-lg p-5 animate__animated animate__fadeInUp"
     >
       <div class="h-full overflow-hidden">
         <h3

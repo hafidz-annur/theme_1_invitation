@@ -65,7 +65,7 @@ const autoplayMenu = () => {
       if (index >= menus_count) {
         autoplay_menu.value = false;
         selected.value = "Pembukaan";
-        clearInterval(intervalId)
+        clearInterval(intervalId);
         emit("selected", selected.value);
         return;
       }
@@ -110,7 +110,7 @@ onMounted(() => {
   <div class="absolute bottom-[80px] right-7 z-[9999] flex flex-col">
     <v-btn
       size="x-small"
-      color="#C1A162"
+      color="primary"
       :icon="!autoplay_menu ? 'mdi-play-outline' : 'mdi-pause'"
       @click="
         autoplay_menu = !autoplay_menu;
@@ -120,7 +120,7 @@ onMounted(() => {
     />
     <v-btn
       size="x-small"
-      color="#C1A162"
+      color="primary"
       :icon="!autoplay_music ? 'mdi-volume-off' : 'mdi-volume-high'"
       @click="playMusic()"
     />
@@ -129,13 +129,11 @@ onMounted(() => {
     <v-tabs
       v-model="selected"
       align-tabs="center"
-      bg-color="#C1A162"
-      color="secondary"
       slider-color="secondary"
       height="50"
       stacked
       center-active
-      class="rounded-lg"
+      class="rounded-lg bg-black/80"
       @update:model-value="selectedMenu()"
     >
       <v-tab
@@ -143,10 +141,14 @@ onMounted(() => {
         v-for="item in menus"
         :value="item.title"
         class="p-0"
-        :class="item.title == selected ? 'bg-[#8c7444]' : null"
+        :class="item.title == selected ? 'bg-primary' : 'text-primary'"
       >
-        <v-icon :icon="item.icon" size="20" />
-        <p class="text-[10px] text-white">
+        <v-icon
+          :icon="item.icon"
+          size="20"
+          :class="item.title == selected ? 'bg-primary' : ''"
+        />
+        <p class="text-[10px]" :class="item.title == selected ? 'text-black' : ''">
           {{ item.title }}
         </p>
       </v-tab>

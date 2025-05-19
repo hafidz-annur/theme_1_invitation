@@ -54,7 +54,7 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-  <v-app class="bg-gradient-to-r from-orange-200 to-orange-300">
+  <v-app class="bg-gradient-to-r from-gray-900 to-gray-700">
     <div class="flex flex-col justify-center items-center w-full h-[100dvh]" v-if="loading">
       <div class="flex justify-center animate__animated animate__pulse animate__infinite">
         <img src="/public/favicon.png" alt="Āmantrana" class="w-14" />
