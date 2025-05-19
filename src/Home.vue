@@ -55,15 +55,22 @@ onBeforeMount(async () => {
 
 <template>
   <v-app class="bg-gradient-to-r from-gray-900 to-gray-700">
-    <div class="flex flex-col justify-center items-center w-full h-[100dvh]" v-if="loading">
-      <div class="flex justify-center animate__animated animate__pulse animate__infinite">
+    <div
+      class="flex flex-col justify-center items-center w-full h-[100dvh]"
+      v-if="loading"
+    >
+      <div
+        class="flex justify-center animate__animated animate__pulse animate__infinite"
+      >
         <img src="/public/favicon.png" alt="Āmantrana" class="w-14" />
       </div>
 
       <div class="w-[200px] mt-2">
         <v-progress-linear v-model="progress" color="info" height="20" rounded>
           <template v-slot:default="{ value }">
-            <strong class="text-gray-200 text-[10px]">{{ Math.ceil(value) }}%</strong>
+            <strong class="text-gray-200 text-[10px]"
+              >{{ Math.ceil(value) }}%</strong
+            >
           </template>
         </v-progress-linear>
       </div>
@@ -136,7 +143,8 @@ onBeforeMount(async () => {
 
 <style>
 .bg-theme {
-  background-image: url("/public/img/cover.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.548), rgba(0, 0, 0, 0.7)),
+    url("/public/img/cover.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -125,7 +125,7 @@ onMounted(() => {
   </v-dialog>
   <v-container height="100dvh" class="relative p-5">
     <div
-      class="bg-black/80 h-[87dvh] rounded-lg p-5 animate__animated animate__fadeInUp"
+      class="bg-black/40 h-[87dvh] rounded-lg p-5 animate__animated animate__fadeInUp"
     >
       <div class="h-full overflow-hidden">
         <h3
@@ -138,7 +138,7 @@ onMounted(() => {
           block
           class="mb-3 mt-3 animate__animated animate__zoomIn animate__delay-2s"
           @click="dialog = true"
-          color="#C1A162"
+          color="primary"
           size="small"
         >
           Kirim Pesan
@@ -179,7 +179,7 @@ onMounted(() => {
           class="h-full overflow-auto pb-[145px] animate__animated animate__zoomIn animate__delay-4s"
         >
           <div
-            class="bg-white rounded-lg px-2 py-2 mb-2 shadow"
+            class="bg-black/40 rounded-lg px-2 py-2 mb-2 shadow"
             v-for="(item, index) in messages.pesan"
             :key="item"
           >

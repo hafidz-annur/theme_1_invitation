@@ -133,7 +133,7 @@ onMounted(() => {
       height="50"
       stacked
       center-active
-      class="rounded-lg bg-black/80"
+      class="rounded-lg bg-black/40"
       @update:model-value="selectedMenu()"
     >
       <v-tab

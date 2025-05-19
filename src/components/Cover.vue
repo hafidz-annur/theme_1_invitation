@@ -8,8 +8,10 @@ const openInvitation = () => {
 </script>
 <template>
   <v-container height="100dvh" class="relative p-0">
-    <div class="text-center h-full bg-[#35312c]/80 p-5">
-      <p class="text-xl mb-3 text-dark animate__animated animate__zoomIn pt-[5vh]">
+    <div class="text-center h-full p-5">
+      <p
+        class="text-xl mb-3 text-dark animate__animated animate__zoomIn pt-[5vh]"
+      >
         The Wedding of
       </p>
       <h1
@@ -56,7 +58,9 @@ const openInvitation = () => {
             </p>
           </v-card-text>
         </v-card>
-        <div class="text-center animate__animated animate__zoomIn animate__delay-2s">
+        <div
+          class="text-center animate__animated animate__zoomIn animate__delay-2s"
+        >
           <p class="text-[10px]">
             Mohon maaf apabila ada kesalahan penulisan nama/gelar.
           </p>
